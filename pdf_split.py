@@ -39,9 +39,8 @@ def split(pg, columns, writer, stream):
 		col = columns[i]
 		newPage.cropBox.lowerLeft = [col[0], 0]
 		newPage.cropBox.lowerRight = [col[1], 0]
-		print col
-		print newPage.cropBox
 		writer.addPage(newPage)
 		writer.write(stream)
 
-processFile("fastkmeans.pdf", "out2.pdf")
+if __name__ == '__main__':
+	processFile(sys.argv[1], sys.argv[2])
